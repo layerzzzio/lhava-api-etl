@@ -30,7 +30,7 @@ Also, you will find:
 
 ## Personal note
 
-This was my first experience exploring blockchain data and API, so it's possible that I made some functional errors during the process. I would greatly appreciate any feedback or insights if you notice any irregularities or areas where improvements can be made. Your assistance is highly valued.
+This was my first experience exploring blockchain data and API, so it's possible that I made some functional errors during the process. I would greatly appreciate any feedback or insights if you notice any irregularities or areas where improvements can be made.
 
 ## Greetings
 Thank you for giving me the opportunity to dive into the blockchain data.
