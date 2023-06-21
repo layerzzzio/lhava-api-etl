@@ -80,7 +80,7 @@ It pulls information from the aggregated tables as mentioned in the preceding Po
 
 I chose to do this using Flutter over Retool since:
 - I know Flutter quickly well and creating a dashboard with it is fast and easy
-- I thought it could be useful to know, we potentially have the possibility to create a custom dashboard for customers
+- I thought it could be useful to know, we potentially have the possibility to create a custom dashboard for customers. Could be useful if creating a SAAS is where Llava wants to go toward
 
 ## Collaboration with other teams
 
