@@ -28,6 +28,10 @@ Also, you will find:
 - Part 2 of the assignment is here -> [optimization.md](optimization.md) (eg. how to optimize & troubleshoot it)
 - Part 3 of the assignment is here -> [collaboration.md](collaboration.md) (eg. how the ETL works & collaborations)
 
+## Personal note
+
+This was my first experience exploring blockchain data and API, so it's possible that I made some functional errors during the process. I would greatly appreciate any feedback or insights if you notice any irregularities or areas where improvements can be made. Your assistance is highly valued.
+
 ## Greetings
 Thank you for giving me the opportunity to dive into the blockchain data.
 I enjoyed doing so 🤩 
