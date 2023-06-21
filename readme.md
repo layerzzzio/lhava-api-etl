@@ -16,7 +16,7 @@ Example with mint key `CqR9VaK9GQhLqGdf9ZTGpt9vMZ1zEfztKzab2iy1TNzU` from this [
 python main.py blockchain Solana CqR9VaK9GQhLqGdf9ZTGpt9vMZ1zEfztKzab2iy1TNzU
 ```
 
-I created a dashboard [here](https://app.cvbuilderai.com/solana) so you can see the data in realtime:
+I created a dashboard POC [here](https://app.cvbuilderai.com/solana) (with Flutter) so you can see the data in realtime:
 
 ![dashboard](ressources/dashboard.png)
 
