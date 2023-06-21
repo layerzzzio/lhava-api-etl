@@ -1,4 +1,4 @@
-# Welcome to my LLAVA blockchain etl
+# Welcome to my LHAVA blockchain etl
 
 I am Loïc, currently working out of Durham, UK.
 
