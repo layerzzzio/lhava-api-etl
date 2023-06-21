@@ -62,23 +62,25 @@ I opted for Supabase, a well-regarded Backend as a Service (BAAS), for a couple 
 
 ## What is happening in Postgres
 
-In Postgres, I created a few functions that clean and aggregates the results on the fly.
+In Postgres, I created a few functions that clean and aggregate the results on the fly.
 
 More precisely what I did is:
-- created stage_transition and enforce a PK on the transaction id. It is triggered whenever new rows are inserted to raw_transition
-- created agg_weekly_user that tells the number of active users weekly. It is triggered whenever new rows are inserted to stage_transition
-- created agg_weekly_user that tells the number of active users weekly. It is triggered whenever new rows are inserted to stage_transition
+- created stage_transition and enforced a PK on the transaction id. What it does essentially is define a unique identifier for each row and remove the duplicates based on this row. It is triggered whenever new rows are inserted to raw_transition
+- created agg_weekly_user that generates the number of active users weekly. It is triggered whenever new rows are inserted to stage_transition
+- created agg_weekly_user that counts the distinct number of transactions per program called. It is triggered whenever new rows are inserted to stage_transition
+
+Since these tables are created as soon as new data arrive in Postgres, the aggregated data are immediately available (minus the SQL query time < 10 sec).
 
 ## Web Dashboard 
 
 I've swiftly developed a basic web dashboard utilizing Flutter and Supabase. 
 The data can be viewed [here](https://app.cvbuilderai.com/solana). 
-The dashboard reflects changes instantaneously as new data gets loaded into Postgres. 
+The dashboard reflects changes instantaneously as new data gets loaded into Postgres.
 It pulls information from the aggregated tables as mentioned in the preceding Postgres section.
 
 I chose to do this using Flutter over Retool since:
-- I know Flutter quick well and creating a dashboard with it is fast and easy
-- I tought it could be useful to know, we potentially have the possibility to create custom dashboard for customers
+- I know Flutter quickly well and creating a dashboard with it is fast and easy
+- I thought it could be useful to know, we potentially have the possibility to create a custom dashboard for customers. Could be useful if creating a SAAS is where Llava wants to go toward
 
 ## Collaboration with other teams
 
