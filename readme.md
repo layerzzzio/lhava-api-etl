@@ -20,7 +20,7 @@ You can see the realtime data [here](https://app.cvbuilderai.com/solana):
 
 ![dashboard](ressources/dashboard.png)
 
-Note: I created a temporary screen in my application [CVBuilderAI]('https://app.cvbuilderai.com/')
+Note: I created a temporary screen in my application [CVBuilderAI](https://app.cvbuilderai.com/)
 
 ## The rest of the assignment
 Also you will find:
