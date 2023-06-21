@@ -20,10 +20,10 @@ I created a dashboard [here](https://app.cvbuilderai.com/solana) so you can see 
 
 ![dashboard](ressources/dashboard.png)
 
-Note: I created a temporary screen in my application [CVBuilderAI](https://app.cvbuilderai.com/)
+Note: I created a temporary screen in my application [CVBuilderAI](https://app.cvbuilderai.com/) to do so. Don't be surprised if you see the cvbuilderai URL.
 
 ## The rest of the assignment
-Also you will find:
+Also, you will find:
 
 - Part 2 of the assignment is here -> [optimization.md](optimization.md) (eg. how to optimize & troubleshoot it)
 - Part 3 of the assignment is here -> [collaboration.md](collaboration.md) (eg. how the ETL works & collaborations)
