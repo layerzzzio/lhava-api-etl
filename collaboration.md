@@ -57,8 +57,8 @@ I selected PySpark because its API is sturdy and ideal for conducting in-memory 
 ##### Database (hypothetical choice - I could be wrong here)
 
 I opted for Supabase, a well-regarded Backend as a Service (BAAS), for a couple of key reasons:
-- First, from my conversation with Pierre, it seems evident that LLAVA aims to progress quickly and explore various markets and opportunities. Therefore, it appeared beneficial, particularly in the initial stages, to devote our efforts to data exploration rather than managing an entire Postgres server.
-- Secondly, my understanding is that LLAVA might consider venturing into the creation of a Software as a Service (SAAS) for NFTs. Supabase is an excellent choice for such a venture, as all tables can be accessed easily through a Supabase client, which can be readily integrated with frontend tools like NextJS and Flutter.
+- First, from my conversation with Pierre, it seems evident that LHAVA aims to progress quickly and explore various markets and opportunities. Therefore, it appeared beneficial, particularly in the initial stages, to devote our efforts to data exploration rather than managing an entire Postgres server.
+- Secondly, my understanding is that LHAVA might consider venturing into the creation of a Software as a Service (SAAS) for NFTs. Supabase is an excellent choice for such a venture, as all tables can be accessed easily through a Supabase client, which can be readily integrated with frontend tools like NextJS and Flutter.
 
 ## What is happening in Postgres
 
