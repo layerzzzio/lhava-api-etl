@@ -10,7 +10,7 @@ To run the ETL (it is also explained in the [collaboration.md](collaboration.md)
 python main.py blockchain Solana <MINT_KEY>
 ```
 
-Example with mint key `CqR9VaK9GQhLqGdf9ZTGpt9vMZ1zEfztKzab2iy1TNzU` from this [Okay Bear NFT]('https://magiceden.io/item-details/CqR9VaK9GQhLqGdf9ZTGpt9vMZ1zEfztKzab2iy1TNzU?name=Okay-Bear-%23445')
+Example with mint key `CqR9VaK9GQhLqGdf9ZTGpt9vMZ1zEfztKzab2iy1TNzU` from this [Okay Bear NFT](https://magiceden.io/item-details/CqR9VaK9GQhLqGdf9ZTGpt9vMZ1zEfztKzab2iy1TNzU?name=Okay-Bear-%23445)
 
 ```
 python main.py blockchain Solana CqR9VaK9GQhLqGdf9ZTGpt9vMZ1zEfztKzab2iy1TNzU
