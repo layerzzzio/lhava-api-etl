@@ -72,7 +72,7 @@ More precisely what I did is:
 ## Web Dashboard 
 
 I've swiftly developed a basic web dashboard utilizing Flutter and Supabase. 
-The data can be viewed [here]('https://app.cvbuilderai.com/solana'). 
+The data can be viewed [here](https://app.cvbuilderai.com/solana). 
 The dashboard reflects changes instantaneously as new data gets loaded into Postgres. 
 It pulls information from the aggregated tables as mentioned in the preceding Postgres section.
 
