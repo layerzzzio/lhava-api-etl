@@ -15,7 +15,7 @@ class Solana(Blockchain):
         # API CALLS
         signatures_obj = get_signatures_for_address(mint_address)
         logging.info(f"get_signatures_for_address count={len(signatures_obj)}")
-        signatures = extract_signatures(signatures_obj)
+        signatures = extract_signatures(signatures_obj)[0:2]
         logging.info(f"extract_signatures count={len(signatures)}. Example: {signatures[0]}")
         transaction = get_transaction_details(signatures)
         logging.info(f"transaction count={len(transaction)}")

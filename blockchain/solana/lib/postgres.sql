@@ -47,20 +47,20 @@ CREATE TABLE public.agg_weekly_users (
     distinct_payers INT
 );
 
--- Create the trigger function
-CREATE OR REPLACE FUNCTION update_agg_weekly_users()
-RETURNS TRIGGER AS $$
+-- Create the trigger function for update_agg_weekly_users()
+CREATE OR REPLACE FUNCTION trigger_update_agg_weekly_users()
+    RETURNS TRIGGER AS $$
 BEGIN
-    -- Note that the calculation is done for the last 7 days from current date
+    -- Note that the calculation is done for the last 7 days from the current date
     -- The week_start_date is defined as the date 7 days ago.
     WITH expanded_signers AS (
-        SELECT blockdate, unnest(signers) as signer
+        SELECT blockdate, unnest(signers) AS signer
         FROM public.stage_transaction
     )
     INSERT INTO agg_weekly_users (week_start_date, distinct_payers)
     SELECT
-        CURRENT_DATE - INTERVAL '7 days' as week_start_date,
-        COUNT(DISTINCT signer) as distinct_payers
+        CURRENT_DATE - INTERVAL '7 days' AS week_start_date,
+        COUNT(DISTINCT signer) AS distinct_payers
     FROM
         expanded_signers
     WHERE
@@ -73,11 +73,9 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Create the trigger on the stage_transaction table
-CREATE TRIGGER update_agg_weekly_users_trigger
-AFTER INSERT ON stage_transaction
-FOR EACH ROW
-EXECUTE FUNCTION update_agg_weekly_users();
+CREATE TRIGGER after_insert_stage_transaction_weekly
+    AFTER INSERT ON stage_transaction
+    EXECUTE FUNCTION trigger_update_agg_weekly_users();
 
 -- Create the agg_transaction_per_program table
 CREATE TABLE public.agg_transaction_per_program (
@@ -85,13 +83,14 @@ CREATE TABLE public.agg_transaction_per_program (
     transaction_count INT
 );
 
-CREATE OR REPLACE FUNCTION update_agg_transaction_per_program()
-RETURNS TRIGGER AS $$
+-- Create the trigger function for update_agg_transaction_per_program()
+CREATE OR REPLACE FUNCTION trigger_update_agg_transaction_per_program()
+    RETURNS TRIGGER AS $$
 BEGIN
     WITH agg AS (
         SELECT
-            executing_account as program_called,
-            COUNT(DISTINCT id) as transaction_count
+            executing_account AS program_called,
+            COUNT(DISTINCT id) AS transaction_count
         FROM
             public.stage_transaction
         GROUP BY
@@ -110,7 +109,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER update_agg_transaction_per_program_trigger
-AFTER INSERT ON stage_transaction
-FOR EACH ROW
-EXECUTE FUNCTION update_agg_transaction_per_program();
+CREATE TRIGGER after_insert_stage_transaction_program
+    AFTER INSERT ON stage_transaction
+    EXECUTE FUNCTION trigger_update_agg_transaction_per_program();
