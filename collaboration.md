@@ -28,22 +28,15 @@ The Solana class contains three methods that are specific to Solana data:
 - Transform: the transform method applies the business rules described in the assignment and creates handy columns later used in Postgres
 - Load: the load method writes the data raw_transaction table in Postgres (Supabase)
 
-!['solana class'](./solana_class.png)
+!['solana class'](ressources/solana_class.png)
 
-### Postgres program
-
-In Postgres, I created a few functions that:
-- creates stage_transition and enforce a PK on the transaction id. It is triggered whenever new rows are inserted to raw_transition
-- creates agg_weekly_user that tells the number of active users weekly. It is triggered whenever new rows are inserted to stage_transition
-- creates agg_weekly_user that tells the number of active users weekly. It is triggered whenever new rows are inserted to stage_transition
-
-### Architecture
+### ETL Architecture
 
 #### Overview
 
 By utilizing the Abstract Base Classes (ABC) library in Python, I've designed a hierarchical class structure to ensure a consistent Extract, Transform, Load (ETL) framework for all newly acquired data from any blockchain. In essence, I've defined a superclass named 'Blockchain' from which individual blockchain classes such as 'Solana' inherit. This superclass incorporates three core methods: extract, transform, and load. This design guarantees that every subclass, like 'Solana', is required to implement these three methods. Python will generate an error if any of these methods are overlooked. This approach is highly effective in implementing a robust ETL structure across all classes.
 
-!['hierarchy'](./blockchain_hierarchy.png)
+!['hierarchy'](ressources/blockchain_hierarchy.png)
 
 The purpose of this design is to enable a secure and systematic scalability of the number of blockchain classes, such as expanding the ETL process for additional blockchains, without compromising stability or efficiency.
 
@@ -66,6 +59,26 @@ I selected PySpark because its API is sturdy and ideal for conducting in-memory 
 I opted for Supabase, a well-regarded Backend as a Service (BAAS), for a couple of key reasons:
 - First, from my conversation with Pierre, it seems evident that LLAVA aims to progress quickly and explore various markets and opportunities. Therefore, it appeared beneficial, particularly in the initial stages, to devote our efforts to data exploration rather than managing an entire Postgres server.
 - Secondly, my understanding is that LLAVA might consider venturing into the creation of a Software as a Service (SAAS) for NFTs. Supabase is an excellent choice for such a venture, as all tables can be accessed easily through a Supabase client, which can be readily integrated with frontend tools like NextJS and Flutter.
+
+## What is happening in Postgres
+
+In Postgres, I created a few functions that clean and aggregates the results on the fly.
+
+More precisely what I did is:
+- created stage_transition and enforce a PK on the transaction id. It is triggered whenever new rows are inserted to raw_transition
+- created agg_weekly_user that tells the number of active users weekly. It is triggered whenever new rows are inserted to stage_transition
+- created agg_weekly_user that tells the number of active users weekly. It is triggered whenever new rows are inserted to stage_transition
+
+## Web Dashboard 
+
+I've swiftly developed a basic web dashboard utilizing Flutter and Supabase. 
+The data can be viewed [here]('https://app.cvbuilderai.com/solana'). 
+The dashboard reflects changes instantaneously as new data gets loaded into Postgres. 
+It pulls information from the aggregated tables as mentioned in the preceding Postgres section.
+
+I chose to do this using Flutter over Retool since:
+- I know Flutter quick well and creating a dashboard with it is fast and easy
+- I tought it could be useful to know, we potentially have the possibility to create custom dashboard for customers
 
 ## Collaboration with other teams
 
