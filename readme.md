@@ -5,7 +5,7 @@ I am Loïc, currently working out of Durham, UK.
 Here is my take on the assignment aiming to fetch data from the Solana blockchain. You will find most of the code in the main.py, the blockchain module and utils.py.
 
 ## tldr: How to execute the code & see the results
-To run the ETL (it is also explained in the [collaboration.md](collaboration.md)) just type at the root of the project from a MacOS or Linux terminal:
+To run the ETL (it is also explained in the [collaboration.md](collaboration.md)) just type the following command, at the root of the project, from a MacOS or Linux terminal:
 ```
 python main.py blockchain Solana <MINT_KEY>
 ```
