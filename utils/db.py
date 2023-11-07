@@ -7,7 +7,7 @@ connection_properties = {
     # WARNING !
     # Not good to do that but easy solution for the assignment ONLY
     # The good practise if to save that in the secret section of the given GitHub repository
-    "password": "RAUyNj0SDgMvdsg6",
+    "password": *******,
     "driver": "org.postgresql.Driver"
 }
 
